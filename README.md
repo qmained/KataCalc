@@ -1,2 +1,2 @@
 # KataCalc
-Kata task
+Kata task for Kata Academy
