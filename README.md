@@ -1,0 +1,2 @@
+# KataCalc
+Kata task
