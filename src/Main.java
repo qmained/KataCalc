@@ -51,8 +51,6 @@ public class Main{
         else{
             a = Roman.valueOf(arr[0]).ordinal() + 1;
             b = Roman.valueOf(arr[2]).ordinal() + 1;
-            if (a > 10 || b > 10)
-                throw new Exception();
         }
         int result = switch (arr[1]) {
             case "+" -> a + b;
