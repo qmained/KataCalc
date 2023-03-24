@@ -8,7 +8,7 @@ public class Main{
 
     public static class RomanNumber {
 
-        private final static TreeMap<Integer, String> map = new TreeMap<Integer, String>();
+        private final static TreeMap<Integer, String> map = new TreeMap<>();
 
         static {
 
@@ -47,6 +47,8 @@ public class Main{
         if (isDigit){
             a = Integer.parseInt(arr[0]);
             b = Integer.parseInt(arr[2]);
+            if (a <= 0 || a >= 10 || b <= 0 || b >= 10)
+                throw new Exception();
         }
         else{
             a = Roman.valueOf(arr[0]).ordinal() + 1;
@@ -69,12 +71,6 @@ public class Main{
         }
     }
     public static void main(String[] args) throws Exception {
-
-        System.out.println(calc("1 + 2"));
-        System.out.println(calc("VI / III"));
-//        System.out.println(calc("I - II")); // Exception
-//        System.out.println(calc("I + 1")); // Exception
-//        System.out.println(calc("1")); // Exception
-//        System.out.println(calc("1 + 2 + 3")); // Exception
+        System.out.println(calc(String.join(" ", args)));
     }
 }
