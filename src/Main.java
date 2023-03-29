@@ -1,3 +1,4 @@
+import java.util.Scanner;
 import java.util.TreeMap;
 
 public class Main{
@@ -71,6 +72,7 @@ public class Main{
         }
     }
     public static void main(String[] args) throws Exception {
-        System.out.println(calc(String.join(" ", args)));
+        Scanner scanner = new Scanner(System.in);
+        System.out.println(calc(scanner.nextLine()));
     }
 }
