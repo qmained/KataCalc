@@ -1,9 +1,9 @@
 import java.util.Scanner;
 import java.util.TreeMap;
 
-public class Main{
+public class Main {
 
-    enum Roman{
+    enum Roman {
         I, II, III, IV, V, VI, VII, VIII, IX, X
     }
 
@@ -30,11 +30,11 @@ public class Main{
         }
 
         public static String toRoman(int number) {
-            int l =  map.floorKey(number);
-            if ( number == l ) {
+            int l = map.floorKey(number);
+            if (number == l) {
                 return map.get(number);
             }
-            return map.get(l) + toRoman(number-l);
+            return map.get(l) + toRoman(number - l);
         }
 
     }
@@ -45,13 +45,12 @@ public class Main{
             throw new Exception();
         int a, b;
         boolean isDigit = Character.isDigit(arr[0].charAt(0));
-        if (isDigit){
+        if (isDigit) {
             a = Integer.parseInt(arr[0]);
             b = Integer.parseInt(arr[2]);
             if (a <= 0 || a >= 10 || b <= 0 || b >= 10)
                 throw new Exception();
-        }
-        else{
+        } else {
             a = Roman.valueOf(arr[0]).ordinal() + 1;
             b = Roman.valueOf(arr[2]).ordinal() + 1;
         }
@@ -64,13 +63,14 @@ public class Main{
         };
         if (isDigit)
             return Integer.toString(result);
-        else{
+        else {
             if (result <= 0)
                 throw new Exception();
             else
                 return RomanNumber.toRoman(result);
         }
     }
+
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
         System.out.println(calc(scanner.nextLine()));
